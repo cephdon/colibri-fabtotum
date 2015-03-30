@@ -1,2 +1,8 @@
-config BR2_BUNDLE_CORE
-	bool "core"
+config BR2_PACKAGE_CORE_BUNDLE
+	select BR2_PACKAGE_DROPBEAR
+	select BR2_PACKAGE_NANO
+	select BR2_PACKAGE_NCURSES
+	select BR2_PACKAGE_READLINE
+	select BR2_PACKAGE_ZLIB
+	select BR2_PACKAGE_SUDO
+	bool "core-bundle"
