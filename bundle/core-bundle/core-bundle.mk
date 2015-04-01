@@ -3,7 +3,7 @@ CORE_BUNDLE_VERSION = 0.1
 CORE_BUNDLE_LICENSE = GPLv2
 CORE_BUNDLE_LICENSE_FILES = COPYING
 
-CORE_BUNDLE_PACKAGES = ncurses readline zlib sudo nano dropbear
+CORE_BUNDLE_PACKAGES = busybox ncurses readline zlib sudo nano dropbear
 CORE_BUNDLE_ADD_ROOTFS = YES
 
 $(eval $(bundle-package))
