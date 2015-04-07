@@ -1,0 +1,4 @@
+config BR2_PACKAGE_SCIENTIFIC_BUNDLE
+	select BR2_PACKAGE_CLAPACK
+	select BR2_PACKAGE_OPENCV
+	bool "scientific-bundle"

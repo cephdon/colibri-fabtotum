@@ -1,0 +1,3 @@
+config BR2_PACKAGE_FABUI_BUNDLE
+	select BR2_PACKAGE_FABUI
+	bool "fabui-bundle"
