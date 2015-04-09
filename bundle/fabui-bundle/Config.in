@@ -1,3 +1,4 @@
 config BR2_PACKAGE_FABUI_BUNDLE
 	select BR2_PACKAGE_FABUI
+	select BR2_PACKAGE_CURA_ENGINE
 	bool "fabui-bundle"

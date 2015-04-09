@@ -1,0 +1,6 @@
+config BR2_PACKAGE_CURA_ENGINE
+	bool "cura-engine"
+	help
+		The CuraEngine is a C++ console application for 3D printing GCode generation.
+		
+		https://github.com/Ultimaker/CuraEngine
