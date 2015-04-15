@@ -1,4 +1,5 @@
 source "$BR2_EXTERNAL/bundle/core-bundle/Config.in"
+source "$BR2_EXTERNAL/bundle/kernel-bundle/Config.in"
 source "$BR2_EXTERNAL/bundle/extra-libs-bundle/Config.in"
 source "$BR2_EXTERNAL/bundle/network-bundle/Config.in"
 source "$BR2_EXTERNAL/bundle/python-bundle/Config.in"
