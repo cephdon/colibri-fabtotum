@@ -6,9 +6,9 @@
 
 FABUI_VERSION = d29d22ff64cc3822f9b9f6402a4abcbcac50c9be
 
-FABUI_SITE = $(call github,FABtotum,Colibri-FAB-UI,$(FABUI_VERSION))
-#FABUI_SITE=/mnt/projects/external/FABTotum/Colibri-FAB-UI
-#FABUI_SITE_METHOD = local
+#FABUI_SITE = $(call github,FABtotum,Colibri-FAB-UI,$(FABUI_VERSION))
+FABUI_SITE=$(BR2_EXTERNAL)/../Colibri-FAB-UI
+FABUI_SITE_METHOD = local
 
 FABUI_LICENSE = GPLv2
 FABUI_LICENSE_FILES = LICENCE
