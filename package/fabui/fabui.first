@@ -15,17 +15,19 @@
 . /etc/default/rc
 . ${rc_functions}
 
+# Group fabtotum/fabui log files inside a commin dir
+LOG_DIR=/var/log/fabui
+
 case "$1" in
   pre)
+	if [ ! -d $LOG_DIR ]; then mkdir -p $LOG_DIR; fi  # This may go inside a "fabtotum" firstboot script
     boot_msg "Configuring lighttpd for FABUI."
+    chgrp www-data $LOG_DIR
+    chmod -R g+rwX $LOG_DIR
     /usr/sbin/lighttpd-enable-mod fastcgi fastcgi-php fabui
     evaluate_retval
     ;;
   post)
-    #boot_msg "Configuring MySQL root password."
-    #wait_for_file_create /run/mysqld.sock 30
-    #/usr/bin/mysqladmin -u root password 'fabtotum'
-    #evaluate_retval
     ;;
   *)
     echo "Usage: $0 {pre|post}"
