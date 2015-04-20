@@ -54,6 +54,8 @@ define FABUI_INSTALL_TARGET_CMDS
 	$(FABUI_FAKEROOT) $(FABUI_FAKEROOT_ENV) chown 33:33 -R $(FABUI_TARGET_DIR)/var/www
 #	Install lighttpd configuration files	
 	$(FABUI_INSTALL_LIGHTTPD_FILES)
+#	Install sudoers permission files
+	$(FABUI_INSTALL_SUDOERS)
 endef
 
 define FABUI_INSTALL_INIT_SYSV
@@ -84,10 +86,15 @@ define FABUI_INSTALL_INIT_SYSV
 endef
 
 define FABUI_POST_TARGET_CLEANUP
-	rm -rf $(FABUI_TARGET_DIR)/var/www/recovery/install/system/etc
+	$(FABUI_FAKEROOT) -- rm -rf $(FABUI_TARGET_DIR)/var/www/recovery/install/system/etc
 endef
 
 FABUI_POST_INSTALL_TARGET_HOOKS += FABUI_POST_TARGET_CLEANUP
 
+define FABUI_INSTALL_SUDOERS
+	$(FABUI_FAKEROOT) $(INSTALL) -d -m 0750 $(FABUI_TARGET_DIR)/etc/sudoers.d
+	$(FABUI_FAKEROOT) $(INSTALL) -D -m 0440 $(BR2_EXTERNAL)/package/fabui/fabui.sudoers $(FABUI_TARGET_DIR)/etc/sudoers.d/fabui
+	$(FABUI_FAKEROOT) -- chmode 0440 $(FABUI_TARGET_DIR)/etc/sudoers.d/fabui
+endef
 
 $(eval $(generic-package))
