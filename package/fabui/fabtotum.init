@@ -16,6 +16,7 @@
 . ${rc_functions}
 
 SERVICE_NAME=FABtotum
+FABTOTUM_PORT_NAME=/dev/ttyAMA0
 
 case "$1" in
   start)
@@ -26,10 +27,10 @@ case "$1" in
   stop)
 	boot_msg "Stopping ${SERVICE_NAME}."
 	# RasPi going to sleep
-	echo M729 > /dev/ttyAMA0 && cat /dev/ttyAMA0 > /dev/null
+	echo M729 > $FABTOTUM_PORT_NAME && cat $FABTOTUM_PORT_NAME > /dev/null
 	evaluate_retval
 	# Maybe turn off the lights in the future
-	( sleep 5s; echo -e "M701 S0\nM702 S0\nM703 S0" > /dev/ttyAMA0 && cat /dev/ttyAMA0 > /dev/null )&
+	( sleep 5s; echo -e "M701 S0\nM702 S0\nM703 S0" > $FABTOTUM_PORT_NAME && cat $FABTOTUM_PORT_NAME > /dev/null )&
 	;;
   restart|reload)
 	${0} stop
