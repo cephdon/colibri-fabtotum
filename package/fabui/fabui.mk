@@ -94,7 +94,7 @@ FABUI_POST_INSTALL_TARGET_HOOKS += FABUI_POST_TARGET_CLEANUP
 define FABUI_INSTALL_SUDOERS
 	$(FABUI_FAKEROOT) $(INSTALL) -d -m 0750 $(FABUI_TARGET_DIR)/etc/sudoers.d
 	$(FABUI_FAKEROOT) $(INSTALL) -D -m 0440 $(BR2_EXTERNAL)/package/fabui/fabui.sudoers $(FABUI_TARGET_DIR)/etc/sudoers.d/fabui
-	$(FABUI_FAKEROOT) -- chmode 0440 $(FABUI_TARGET_DIR)/etc/sudoers.d/fabui
+	$(FABUI_FAKEROOT) -- chmod 0440 $(FABUI_TARGET_DIR)/etc/sudoers.d/fabui
 endef
 
 $(eval $(generic-package))
