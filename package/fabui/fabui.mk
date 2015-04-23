@@ -22,8 +22,9 @@ FABUI_HTDOCS_FILES = \
 	lib \
 	LICENSE \
 	README.md \
-	recovery
-	
+	recovery \
+	upload
+
 FABUI_DBFILE = fabtotum.db
 
 define FABUI_INSTALL_LIGHTTPD_FILES
