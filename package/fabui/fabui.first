@@ -16,14 +16,14 @@
 . ${rc_functions}
 
 # Group fabtotum/fabui log files inside a commin dir
-LOG_DIR=/var/log/fabui
+#LOG_DIR=/var/log/fabui
 
 case "$1" in
   pre)
-	if [ ! -d $LOG_DIR ]; then mkdir -p $LOG_DIR; fi  # This may go inside a "fabtotum" firstboot script
+    #if [ ! -d $LOG_DIR ]; then mkdir -p $LOG_DIR; fi  # This may go inside a "fabtotum" firstboot script
     boot_msg "Configuring lighttpd for FABUI."
-    chgrp www-data $LOG_DIR
-    chmod -R g+rwX $LOG_DIR
+    #chgrp www-data $LOG_DIR
+    #chmod -R g+rwX $LOG_DIR
     /usr/sbin/lighttpd-enable-mod fastcgi fastcgi-php fabui
     evaluate_retval
     ;;
