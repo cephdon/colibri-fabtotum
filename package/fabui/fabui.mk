@@ -22,8 +22,9 @@ FABUI_HTDOCS_FILES = \
 	lib \
 	LICENSE \
 	README.md \
-	recovery
-	
+	recovery \
+	upload
+
 FABUI_DBFILE = fabtotum.db
 
 define FABUI_INSTALL_LIGHTTPD_FILES
@@ -44,6 +45,8 @@ define FABUI_INSTALL_TARGET_CMDS
 	done
 #	Create runtime data directory
 	$(FABUI_FAKEROOT) $(INSTALL) -d -o 33 -g 33 -m 0755 $(FABUI_TARGET_DIR)/var/lib/fabui
+#	Create log directory
+	$(FABUI_FAKEROOT) $(INSTALL) -d -o 33 -g 33 -m 0755 $(FABUI_TARGET_DIR)/var/log/fabui
 #	The autoinstall flag file is created at compile time
 	$(FABUI_FAKEROOT) touch $(FABUI_TARGET_DIR)/var/www/AUTOINSTALL
 #	We still need a temp directory for fab_ui_security
@@ -51,7 +54,7 @@ define FABUI_INSTALL_TARGET_CMDS
 #	Generate Database
 	$(FABUI_INSTALL_DB)
 #	Fix permissions
-	$(FABUI_FAKEROOT) chown 33:33 -R $(FABUI_TARGET_DIR)/var/www
+	$(FABUI_FAKEROOT) chown -R 33:33 -R $(FABUI_TARGET_DIR)/var/www
 #	Install lighttpd configuration files	
 	$(FABUI_INSTALL_LIGHTTPD_FILES)
 #	Install sudoers permission files
