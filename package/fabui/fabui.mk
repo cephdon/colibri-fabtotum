@@ -28,8 +28,7 @@ FABUI_HTDOCS_FILES = \
 FABUI_DBFILE = fabtotum.db
 
 define FABUI_INSTALL_LIGHTTPD_FILES
-	$(FABUI_FAKEROOT) $(INSTALL) -d -m 0644 $(@D)/recovery/install/system/etc
-	$(FABUI_FAKEROOT) $(INSTALL) -D -m 0644 $(@D)/recovery/install/system/etc/lighttpd/conf-available/99-fabui.conf \
+	$(FABUI_FAKEROOT) $(INSTALL) -D -m 0644 $(BR2_EXTERNAL)/package/fabui/fabui.lighttpd \
 		$(FABUI_TARGET_DIR)/etc/lighttpd/conf-available/99-fabui.conf
 endef
 
