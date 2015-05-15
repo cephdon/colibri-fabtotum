@@ -11,7 +11,7 @@ FABUI_SITE=$(BR2_EXTERNAL)/../Colibri-FAB-UI
 FABUI_SITE_METHOD = local
 
 FABUI_LICENSE = GPLv2
-FABUI_LICENSE_FILES = LICENCE
+FABUI_LICENSE_FILES = LICENSE
 FABUI_DEPENDENCIES = host-sqlite
 
 FABUI_HTDOCS_FILES = \
@@ -48,8 +48,9 @@ define FABUI_INSTALL_TARGET_CMDS
 	$(FABUI_FAKEROOT) $(INSTALL) -d -o 33 -g 33 -m 0755 $(FABUI_TARGET_DIR)/var/log/fabui
 #	The autoinstall flag file is created at compile time
 	$(FABUI_FAKEROOT) touch $(FABUI_TARGET_DIR)/var/www/AUTOINSTALL
-#	We still need a temp directory for fab_ui_security
-	$(FABUI_FAKEROOT) $(INSTALL) -d -m 0777 $(FABUI_TARGET_DIR)/var/www/temp
+#	Public runtime directories
+	$(FABUI_FAKEROOT) $(INSTALL) -d -g 33 -m 0775 $(FABUI_TARGET_DIR)/var/www/temp
+	$(FABUI_FAKEROOT) $(INSTALL) -d -g 33 -m 0775 $(FABUI_TARGET_DIR)/var/www/tasks
 #	Generate Database
 	$(FABUI_INSTALL_DB)
 #	Fix permissions
