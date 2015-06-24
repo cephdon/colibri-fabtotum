@@ -4,6 +4,6 @@ NETWORK_BUNDLE_VERSION = v$(shell date +%Y%m%d)
 NETWORK_BUNDLE_LICENSE = GPLv2
 NETWORK_BUNDLE_LICENSE_FILES = COPYING
 
-NETWORK_BUNDLE_PACKAGES = libcurl libmcrypt wireless_tools wpa_supplicant ifplugd iptables
+NETWORK_BUNDLE_PACKAGES = libcurl libmcrypt wireless_tools wpa_supplicant ifplugd ifupdown iptables
 
 $(eval $(bundle-package))
