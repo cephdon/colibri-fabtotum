@@ -64,8 +64,13 @@ define FABUI_INSTALL_INIT_SYSV
 		
 	$(FABUI_FAKEROOT) $(INSTALL) -D -m 0775 $(BR2_EXTERNAL)/package/fabui/fabtotum.init \
 		$(FABUI_TARGET_DIR)/etc/init.d/fabtotum
+	$(FABUI_FAKEROOT) $(INSTALL) -D -m 0644 $(BR2_EXTERNAL)/package/fabui/fabtotum.default \
+		$(FABUI_TARGET_DIR)/etc/default/fabtotum
+		
 	$(FABUI_FAKEROOT) $(INSTALL) -D -m 0775 $(BR2_EXTERNAL)/package/fabui/fabui.init \
 		$(FABUI_TARGET_DIR)/etc/init.d/fabui
+#	$(FABUI_FAKEROOT) $(INSTALL) -D -m 0644 $(BR2_EXTERNAL)/package/fabui/fabui.default \
+#		$(FABUI_TARGET_DIR)/etc/default/fabui
 	$(FABUI_FAKEROOT) $(INSTALL) -D -m 0775 $(BR2_EXTERNAL)/package/fabui/fabui.first \
 		$(FABUI_TARGET_DIR)/etc/firstboot.d/fabui		
 	
