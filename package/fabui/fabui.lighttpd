@@ -1,3 +1,5 @@
+server.max-request-size = 134217728
+
 server.modules += ( "mod_rewrite" )
 
 # Migration of APACHE2 /var/www/fabui/.htaccess to lighttpd syntax
