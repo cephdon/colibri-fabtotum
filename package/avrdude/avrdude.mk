@@ -17,6 +17,7 @@ define AVRDUDE_FIX_ORIGINAL
 	$(AVRDUDE_FAKEROOT) echo "GPIO.cleanup()" >> $(AVRDUDE_TARGET_DIR)/usr/bin/autoreset
 	$(AVRDUDE_FAKEROOT) $(INSTALL) -D -m 755 $(BR2_DL_DIR)/avrdude-autoreset $(AVRDUDE_TARGET_DIR)/usr/bin/avrdude-autoreset
 	$(AVRDUDE_FAKEROOT) ln -sf /usr/bin/avrdude-autoreset $(AVRDUDE_TARGET_DIR)/usr/bin/avrdude
+	sed "s@/dev/ttyS0@/dev/ttyAMA0@g" -i $(AVRDUDE_TARGET_DIR)/etc/avrdude.conf
 endef
 
 AVRDUDE_POST_INSTALL_TARGET_HOOKS += AVRDUDE_FIX_ORIGINAL
