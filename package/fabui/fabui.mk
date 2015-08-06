@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-FABUI_VERSION = 0562804a6ca72558ab6269c15147ba6365a762ac
+FABUI_VERSION = 3adc99833cc7efe00eb53fc1a88f0a6ddecf0071
 
 FABUI_SITE = $(call github,FABtotum,colibri-fabui,$(FABUI_VERSION))
 
