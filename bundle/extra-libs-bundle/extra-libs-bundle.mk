@@ -6,4 +6,5 @@ EXTRA_LIBS_BUNDLE_LICENSE_FILES = COPYING
 
 EXTRA_LIBS_BUNDLE_PACKAGES = openssl pcre libxml2 libyaml gettext icu libusb libusb-compat elfutils libffi libdaemon sqlite
 
+
 $(eval $(bundle-package))
