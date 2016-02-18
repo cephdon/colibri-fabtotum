@@ -174,7 +174,7 @@ function loadXMLDoc(query_string)
 					// Look for "<!-- redirect: * -->" string in the response
 					// text as it contains the redirect url and timeout.
 					var aa = content.match(/<!-- redirect:.*-->/g);
-					if(aa != null)
+					if(aa)
 					{
 						// Remove comment symbols and tag
 						var str = " " + aa + " ";
