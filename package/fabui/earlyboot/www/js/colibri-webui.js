@@ -198,6 +198,7 @@ function loadXMLDoc(query_string)
 					{
 						document.getElementById("webui-content").innerHTML = content;
 					}
+					
 				}
 				else
 					ajaxWaitingFor = "set";
