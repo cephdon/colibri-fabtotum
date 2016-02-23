@@ -25,10 +25,18 @@ custom_normal_begin()
 }
 
 ## @fn custom_normal_end()
+## Execute custom commands upon user aborted recovery 
+custom_recovery_aborted()
+{
+	webui_redirect "fabui/login" 15
+	sleep 1
+}
+
+## @fn custom_normal_end()
 ## Execute custom commands upon leaving earlyboot
 custom_normal_end()
 {
-	webui_redirect "fabui/login" 15
+	true
 }
 
 ## @fn custom_recovery_begin()
