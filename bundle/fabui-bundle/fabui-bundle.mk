@@ -4,6 +4,6 @@ FABUI_BUNDLE_VERSION = v$(shell date +%Y%m%d)
 FABUI_BUNDLE_LICENSE = GPLv2
 FABUI_BUNDLE_LICENSE_FILES = COPYING
 
-FABUI_BUNDLE_PACKAGES = fabui cura-engine strace avrdude
+FABUI_BUNDLE_PACKAGES = fabui
 
 $(eval $(bundle-package))
