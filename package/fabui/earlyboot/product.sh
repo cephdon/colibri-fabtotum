@@ -13,7 +13,7 @@ custom_firstboot_begin()
 ## Execute custom commands upon leaving firstboot
 custom_firstboot_end()
 {
-	webui_redirect "recovery/install/" 20
+	webui_redirect "/" 20
 	sleep 1
 }
 
@@ -28,7 +28,7 @@ custom_normal_begin()
 ## Execute custom commands upon user aborted recovery 
 custom_recovery_aborted()
 {
-	webui_redirect "fabui/login" 15
+	webui_redirect "/" 15
 	sleep 1
 }
 
@@ -50,7 +50,7 @@ custom_recovery_begin()
 ## Execute custom commands upon leaving emergency procedure
 custom_recovery_end()
 {
-	webui_redirect "recovery/install/" 20
+	webui_redirect "/" 20
 	sleep 1
 }
 
@@ -58,5 +58,5 @@ custom_recovery_end()
 ## Condition for entering recovery mode.
 custom_recovery_condition()
 {
-	true
+	false
 }
