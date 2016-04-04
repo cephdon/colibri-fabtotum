@@ -49,7 +49,7 @@
 init_uart_clock=4000000
 
 # for more options see http://elinux.org/RPi_config.txt
-#start_x=1
+start_x=1
 gpu_mem=132
 
 # NOOBS Auto-generated Settings:
