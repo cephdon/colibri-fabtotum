@@ -28,7 +28,7 @@ custom_normal_begin()
 ## Execute custom commands upon user aborted recovery 
 custom_recovery_aborted()
 {
-	write_uart "M999\r\n"
+	#write_uart "M999\r\n"
 	webui_redirect "/" 15
 	sleep 1
 }
@@ -53,7 +53,7 @@ custom_recovery_begin()
 ## Execute custom commands upon leaving emergency procedure
 custom_recovery_end()
 {
-	write_uart "M999\r\n"
+	#write_uart "M999\r\n"
 	webui_redirect "/" 20
 	sleep 1
 }
