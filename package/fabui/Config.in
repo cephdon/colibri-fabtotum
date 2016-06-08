@@ -1,6 +1,0 @@
-config BR2_PACKAGE_FABUI
-	bool "fabui"
-	help
-		FABTotum FAB-UI
-		
-		http://www.fabtotum.com

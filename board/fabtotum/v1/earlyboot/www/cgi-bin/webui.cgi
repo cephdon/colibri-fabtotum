@@ -101,6 +101,9 @@ for item in $(cat $WEBUI_DB| sed 's/ /%20%/g'); do
 		info)
 			echo "<div id=\"item${IID}\"><i class=\"fa fa-info-circle\"></i> $V</div>"
 			;;
+		warning)
+			echo "<div id=\"item${IID}\"><i class=\"fa fa-exclamation-triangle\"></i> $V</div>"
+			;;
 		-)
 			echo "<div id=\"item${IID}\">$V</div>"
 			;;
