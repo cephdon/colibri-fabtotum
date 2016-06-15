@@ -1,0 +1,6 @@
+/var/log/fabui/*.log {
+    size 1M
+    rotate 5
+    missingok
+    notifempty
+}
