@@ -4,6 +4,8 @@ PYTHON_BUNDLE_VERSION = v$(shell date +%Y%m%d)
 PYTHON_BUNDLE_LICENSE = GPLv2
 PYTHON_BUNDLE_LICENSE_FILES = COPYING
 
-PYTHON_BUNDLE_PACKAGES = python python-serial python-rpi-gpio python-numpy python-scipy python-requests python-pyyaml python-pathtools python-watchdog python-ws4py
+PYTHON_BUNDLE_PACKAGES = python python-serial python-rpi-gpio python-numpy python-scipy python-requests python-pyyaml python-pathtools python-watchdog python-ws4py python-picamera
+# pyro4
+PYTHON_BUNDLE_PACKAGES += python-six python-serpent python-selectors34 python-pyro4
 
 $(eval $(bundle-package))
